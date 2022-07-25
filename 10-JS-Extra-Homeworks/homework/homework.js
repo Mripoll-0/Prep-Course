@@ -11,11 +11,8 @@ function deObjetoAmatriz(objeto){
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
   var arr=[];
-  var par=[0, 0];
   for(i in objeto){
-    par[0]=i;
-    par[1]=objeto[i];
-    arr.push(par);
+    arr.push([i.toString(),objeto[i]]);
   }
   return arr;
 }
@@ -95,6 +92,7 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  return arr.sort(function longitud(a,b){ return a.length-b.length;});
 }
 
 
@@ -104,6 +102,9 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  var arr=[];
+  for(i=0; i<arreglo1.length; i++) for(j=0; j<arreglo2.length; j++) if(arreglo1[i]==arreglo2[j]) arr.push(arreglo1[i]);
+  return arr;
 }
 
 
